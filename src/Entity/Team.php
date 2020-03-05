@@ -88,7 +88,6 @@ class Team
         return $this->goals;
     }
 
-
     private function assertCorrectPlayers(array $players)
     {
         foreach ($players as $player) {
