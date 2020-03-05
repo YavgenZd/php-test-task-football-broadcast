@@ -131,20 +131,40 @@
                         {% endif %}
                         </td>
                         <td>
-                        {% if player.yellow_cards > 0 %}
+                        {% if player.yellowCards > 0 %}
                             <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
-                            {% if player.yellow_cards == 2 %}
+                            {% if player.yellowCards == 2 %}
                                 <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
                             {% endif %}
                         {% endif %}
                         </td>
-                        {% if player.red_card > 0 %}
+                        {% if player.redCard > 0 %}
                             <td>
                                 <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/red_card.png">
                             </td>
                         {% endif %}
                         <td>
                             {{ player.playTime }}’
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <table class="table table">
+                <thead>
+                <tr>
+                    <th>Позиция</th>
+                    <th>Время в игре</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, time in team.positionsTime %}
+                    <tr>
+                        <td>
+                            {{ key }}
+                        </td>
+                        <td>
+                            {{ time }}'
                         </td>
                     </tr>
                 {% endfor %}
